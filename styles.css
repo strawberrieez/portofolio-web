@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2a2a50;
+  color: white;
+  font-family: "Itim", cursive;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  text-align: center;
+  width: 40%;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+nav a {
+  color: #f8f8f8;
+  text-decoration: none;
+  margin: 0 25px;
+  font-weight: bold;
+  font-family: "Itim", cursive;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s ease-in-out;
+}
+
+nav a:hover {
+  transform: scale(1.2);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 80px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.text-section {
+  text-align: center;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+p {
+  font-size: 24px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #f8f8f8;
+  background: #1a1a2e;
+  border: 2px solid #1a1a2e;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #3a3a60;
+  transform: scale(1.1);
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid #f8f8f8;
+}
+
+.about-section {
+  background-color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  margin-top: 80px;
+  width: 100vw;
+  flex-wrap: wrap;
+  position: relative;
+  left: -20px;
+  gap: 50px;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid #f8f8f8;
+}
+
+.about-text {
+  font-size: 32px;
+  color: #f8f8f8;
+  text-align: center;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  color: #a78bfa;
+}
+
+.about-text p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.skills-section {
+  width: 80%; /* Dibuat lebih kecil agar sejajar */
+  max-width: 1000px; /* Batas maksimum agar tidak terlalu lebar */
+  margin: 50px auto; /* Pusatkan secara horizontal */
+  background-color: #2A2A50;
+  border: 5px solid #1A1A2E;
+  padding: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 15px; /* Agar tampak lebih estetis */
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Mengurangi gap agar lebih rapi */
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto; /* Agar tetap di tengah */
+}
+
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Jarak antar elemen di dalam skill */
+}
+
+.skill-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(#A78BFA calc(var(--percent) * 3.6deg), #1A1A2E 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  margin-top: 70px; /* Tambahan jarak dari teks */
+}
+
+.circle::after {
+  content: attr(data-percent) "%"; 
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #2A2A50;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.circle span {
+  position: absolute;
+}
+
+.skill h3 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.skill ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.skill ul li {
+  font-size: 16px;
+}
+
+.testimonials h2 {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.testimonials {
+  background: #1a1a2e; /* Warna yang diminta */
+  padding: 50px 0;
+  width: 100vw; /* Lebar penuh */
+  margin-left: -20px; /* Menghilangkan padding bawaan body */
+}
+
+.testimonials-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background: #222248;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  min-width: 300px;
+  text-align: center;
+}
+
+
+.stars {
+  color: #f4c531; /* Warna bintang */
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.portfolio-section {
+  background-color: #1a1a2e;
+  width: 100vw;
+  height: 120vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: -20px;
+}
+.portfolio-section h2 {
+  text-align: center;
+  width: 100%;
+}
+
+
+
+.portfolio-container {
+  padding: 20px; /* Biar ada jarak dari tepi */
+  margin: 0 auto; /* Supaya tetap tengah */
+  max-width: 90%; /* Biar nggak terlalu melebar */
+  
+}
+
+
+.portfolio-item {
+  display: flex;
+  align-items: center;
+  background-color: #1A1A2E;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+
+.portfolio-item img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.portfolio-content {
+  text-align: left;
+}
+
+.tech-stack {
+  margin-top: 10px;
+}
+
+.tech-stack span {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.footer {
+  background-color: #2A2A50;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-info, .footer-links, .footer-contact {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 3px 0;
+}
+
+.footer-contact input, .footer-contact textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.footer-contact button {
+  background-color: #0f3460;
+  color: white;
+  border: none;
+  padding: 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  border-top: 1px solid white;
+  margin-top: 10px;
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+.footer-bottom nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  margin-top: 3px;
+  font-size: 10px;
+}
