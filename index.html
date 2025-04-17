@@ -1,47 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splash Screen</title>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #1A1A2E;
-            color: #F8F8F8;
-            font-family: 'Itim', cursive;
-            padding: 20px;
-            text-align: center;
-        }
-        .splash-container {
-            font-size: 5rem;
-            font-weight: bold;
-            line-height: 1.5;
-        }
-        .splash-container span {
-            color: #6C34B7;
-        }
-    </style>
-    <script>
-        setTimeout(function() {
-            window.location.href = "home.html";
-        }, 3000); // Pindah ke halaman home.html setelah 3 detik
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash Screen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    setTimeout(function () {
+      window.location.href = "home.html";
+    }, 3000); // Redirect ke home.html setelah 3 detik
+  </script>
 </head>
-<body>
-    <div class="splash-container">
-        <p><span>Designing</span> experiences</p>
-        <p><span>One</span> line of <span>code</span></p>
-        <p>at a time<span>!</span></p>
-    </div>
+<body class="splash-body">
+  <div class="splash-container">
+    <p><span>Designing</span> experiences</p>
+    <p><span>One</span> line of <span>code</span></p>
+    <p>at a time<span>!</span></p>
+  </div>
 </body>
 </html>

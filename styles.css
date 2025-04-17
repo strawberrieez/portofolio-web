@@ -1,3 +1,4 @@
+/* RESET DAN DASAR */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ body {
   overflow-x: hidden;
 }
 
+/* NAVBAR */
 nav {
   position: fixed;
   top: 20px;
@@ -42,6 +44,74 @@ nav a:hover {
   transform: scale(1.2);
 }
 
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+/* RESPONSIVE NAVBAR */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1a2e;
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    padding: 20px 0;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #f8f8f8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+  }
+
+  nav a:hover {
+    color: #a78bfa;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CONTAINER BERANDA */
 .container {
   display: flex;
   align-items: center;
@@ -92,6 +162,7 @@ p {
   border: 3px solid #f8f8f8;
 }
 
+/* SECTION ABOUT */
 .about-section {
   background-color: #1a1a2e;
   display: flex;
@@ -133,37 +204,37 @@ p {
   line-height: 1.6;
 }
 
+/* SECTION SKILLS */
 .skills-section {
-  width: 80%; /* Dibuat lebih kecil agar sejajar */
-  max-width: 1000px; /* Batas maksimum agar tidak terlalu lebar */
-  margin: 50px auto; /* Pusatkan secara horizontal */
+  width: 80%;
+  max-width: 1000px;
+  margin: 50px auto;
   background-color: #2A2A50;
   border: 5px solid #1A1A2E;
   padding: 50px;
   text-align: center;
   box-sizing: border-box;
-  border-radius: 15px; /* Agar tampak lebih estetis */
+  border-radius: 15px;
 }
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   justify-content: center;
   align-items: center;
-  gap: 30px; /* Mengurangi gap agar lebih rapi */
+  gap: 30px;
   text-align: center;
   padding: 20px;
   max-width: 800px;
-  margin: 0 auto; /* Agar tetap di tengah */
+  margin: 0 auto;
 }
-
 
 .skill {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px; /* Jarak antar elemen di dalam skill */
+  gap: 15px;
 }
 
 .skill-title {
@@ -183,11 +254,11 @@ p {
   font-size: 18px;
   font-weight: bold;
   position: relative;
-  margin-top: 70px; /* Tambahan jarak dari teks */
+  margin-top: 70px;
 }
 
 .circle::after {
-  content: attr(data-percent) "%"; 
+  content: attr(data-percent) "%";
   position: absolute;
   font-size: 18px;
   font-weight: bold;
@@ -201,28 +272,7 @@ p {
   justify-content: center;
 }
 
-
-
-
-.circle span {
-  position: absolute;
-}
-
-.skill h3 {
-  margin-top: 10px;
-  font-size: 20px;
-}
-
-.skill ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-}
-
-.skill ul li {
-  font-size: 16px;
-}
-
+/* TESTIMONIALS */
 .testimonials h2 {
   text-align: center;
   color: white;
@@ -231,10 +281,10 @@ p {
 }
 
 .testimonials {
-  background: #1a1a2e; /* Warna yang diminta */
+  background: #1a1a2e;
   padding: 50px 0;
-  width: 100vw; /* Lebar penuh */
-  margin-left: -20px; /* Menghilangkan padding bawaan body */
+  width: 100vw;
+  margin-left: -20px;
 }
 
 .testimonials-container {
@@ -255,13 +305,13 @@ p {
   text-align: center;
 }
 
-
 .stars {
-  color: #f4c531; /* Warna bintang */
+  color: #f4c531;
   font-size: 20px;
   margin-top: 10px;
 }
 
+/* PORTFOLIO */
 .portfolio-section {
   background-color: #1a1a2e;
   width: 100vw;
@@ -271,20 +321,17 @@ p {
   position: relative;
   left: -20px;
 }
+
 .portfolio-section h2 {
   text-align: center;
   width: 100%;
 }
 
-
-
 .portfolio-container {
-  padding: 20px; /* Biar ada jarak dari tepi */
-  margin: 0 auto; /* Supaya tetap tengah */
-  max-width: 90%; /* Biar nggak terlalu melebar */
-  
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 90%;
 }
-
 
 .portfolio-item {
   display: flex;
@@ -319,6 +366,7 @@ p {
   margin-right: 5px;
 }
 
+/* FOOTER */
 .footer {
   background-color: #2A2A50;
   color: white;
@@ -338,7 +386,9 @@ p {
   margin: 0 auto;
 }
 
-.footer-info, .footer-links, .footer-contact {
+.footer-info,
+.footer-links,
+.footer-contact {
   flex: 1;
   min-width: 200px;
   margin-bottom: 10px;
@@ -353,7 +403,8 @@ p {
   margin: 3px 0;
 }
 
-.footer-contact input, .footer-contact textarea {
+.footer-contact input,
+.footer-contact textarea {
   width: 100%;
   padding: 5px;
   font-size: 12px;
@@ -386,4 +437,28 @@ p {
 .footer-bottom p {
   margin-top: 3px;
   font-size: 10px;
+}
+
+/* SPLASH SCREEN */
+.splash-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1A1A2E;
+  color: #F8F8F8;
+  font-family: 'Itim', cursive;
+  padding: 20px;
+  text-align: center;
+}
+
+.splash-container {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.splash-container span {
+  color: #6C34B7;
 }
