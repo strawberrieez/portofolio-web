@@ -139,45 +139,97 @@
       </div>
     </section>
 
-    <footer class="footer" id="contact">
-      <div class="footer-container">
-        <div class="footer-info">
-          <p><i class="fab fa-whatsapp"></i> +62 859 5970 5944</p>
-          <p><i class="fas fa-envelope"></i> sekartechdev@gmail.com</p>
-          <p><i class="fab fa-instagram"></i> xyjnee_</p>
-          <p><i class="fab fa-github"></i> strawberriezz</p>
-        </div>
-        <div class="footer-links">
-          <h4>Kebijakan & Informasi</h4>
-          <ul>
-            <li><a href="#">Privasi policy</a></li>
-            <li><a href="#">Term of use</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <form>
-            <label>Name:</label>
-            <input type="text" />
-            <label>Email:</label>
-            <input type="email" />
-            <label>Message:</label>
-            <textarea></textarea>
-            <button type="submit">Send message</button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Sekar Ayu Fatmasari. All Rights Reserved.</p>
-      </div>
-    </footer>
+    <!-- ...semua isi dari awal sampai sebelum footer tetap sama -->
 
-    <!-- SCRIPT -->
-    <script>
-      function toggleMenu() {
-        const nav = document.getElementById("navLinks");
-        nav.classList.toggle("show");
-      }
-    </script>
-  </body>
+<footer class="footer" id="contact">
+  <div class="footer-container">
+    <div class="footer-info">
+      <p><i class="fab fa-whatsapp"></i> +62 859 5970 5944</p>
+      <p><i class="fas fa-envelope"></i> sekartechdev@gmail.com</p>
+      <p><i class="fab fa-instagram"></i> xyjnee_</p>
+      <p><i class="fab fa-github"></i> strawberriezz</p>
+    </div>
+    <div class="footer-links">
+      <h4>Kebijakan & Informasi</h4>
+      <ul>
+        <li><a href="#">Privasi policy</a></li>
+        <li><a href="#">Term of use</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <form id="contactForm">
+        <label for="name">Nama Lengkap:</label>
+        <input type="text" id="name" name="name" maxlength="50" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" maxlength="50" required />
+
+        <label for="phone">Nomor Handphone:</label>
+        <input type="text" id="phone" name="phone" maxlength="15" required />
+
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" maxlength="200"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Tempat tampil error -->
+      <div id="errorMessages" style="color: #ff6b6b; margin-top: 10px;"></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Sekar Ayu Fatmasari. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
+</script>
+
+<!-- Tambahkan jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $('#contactForm').on('submit', function (e) {
+    e.preventDefault();
+
+    let name = $('#name').val().trim();
+    let email = $('#email').val().trim();
+    let phone = $('#phone').val().trim();
+    let message = $('#message').val().trim();
+    let errorMsg = '';
+
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    const phonePattern = /^[0-9]{10,15}$/;
+
+    if (name === '' || email === '' || phone === '') {
+      errorMsg += 'Nama, Email, dan Nomor Handphone wajib diisi.<br>';
+    }
+    if (!emailPattern.test(email)) {
+      errorMsg += 'Format email tidak valid.<br>';
+    }
+    if (!phonePattern.test(phone)) {
+      errorMsg += 'Nomor handphone harus berupa angka 10–15 digit.<br>';
+    }
+    if (name.length > 50) {
+      errorMsg += 'Nama maksimal 50 karakter.<br>';
+    }
+    if (message.length > 200) {
+      errorMsg += 'Pesan maksimal 200 karakter.<br>';
+    }
+
+    if (errorMsg !== '') {
+      $('#errorMessages').html(errorMsg);
+    } else {
+      $('#errorMessages').html('<span style="color: lightgreen;">Pesan berhasil dikirim!</span>');
+      $('#contactForm')[0].reset(); // Kosongkan form
+    }
+  });
+</script>
+</body>
 </html>
