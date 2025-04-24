@@ -1,4 +1,3 @@
-/* RESET DAN DASAR */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVBAR */
 nav {
   position: fixed;
   top: 20px;
@@ -44,7 +42,6 @@ nav a:hover {
   transform: scale(1.2);
 }
 
-/* HAMBURGER */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -58,7 +55,6 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* RESPONSIVE NAVBAR */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -111,7 +107,6 @@ nav a:hover {
   }
 }
 
-/* CONTAINER BERANDA */
 .container {
   display: flex;
   align-items: center;
@@ -162,7 +157,6 @@ p {
   border: 3px solid #f8f8f8;
 }
 
-/* SECTION ABOUT */
 .about-section {
   background-color: #1a1a2e;
   display: flex;
@@ -204,7 +198,6 @@ p {
   line-height: 1.6;
 }
 
-/* SECTION SKILLS */
 .skills-section {
   width: 80%;
   max-width: 1000px;
@@ -272,7 +265,6 @@ p {
   justify-content: center;
 }
 
-/* TESTIMONIALS */
 .testimonials h2 {
   text-align: center;
   color: white;
@@ -311,7 +303,6 @@ p {
   margin-top: 10px;
 }
 
-/* PORTFOLIO */
 .portfolio-section {
   background-color: #1a1a2e;
   width: 100vw;
@@ -366,7 +357,6 @@ p {
   margin-right: 5px;
 }
 
-/* FOOTER */
 .footer {
   background-color: #2A2A50;
   color: white;
@@ -439,7 +429,6 @@ p {
   font-size: 10px;
 }
 
-/* SPLASH SCREEN */
 .splash-body {
   display: flex;
   justify-content: center;
@@ -462,4 +451,3 @@ p {
 .splash-container span {
   color: #6C34B7;
 }
-

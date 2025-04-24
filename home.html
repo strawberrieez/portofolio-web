@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Itim&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <!-- HAMBURGER BUTTON -->
     <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-    <!-- NAVIGATION -->
     <nav id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About Me</a>
@@ -20,7 +22,6 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <div class="container" id="home">
       <div class="text-section">
         <h1>I'm Sekar Ayu Fatmasari</h1>
@@ -28,7 +29,7 @@
           <span style="color: #a78bfa">Mobile Developer</span> |
           <span style="color: #e94560">Flutter Enthusiast</span>
         </p>
-        <a href="#portfolio" class="btn">My Portfolio &gt;</a>
+        <a href="#portfolio" class="btn">My Portfolio ></a>
       </div>
       <img src="images/profile.jpg" alt="Profile Picture" class="profile-img" />
     </div>
@@ -97,7 +98,10 @@
       <h2>Portfolio</h2>
       <div class="portfolio-container">
         <div class="portfolio-item">
-          <img src="images/kosthanypista.png" alt="Kost Hany Pista Mobile App" />
+          <img
+            src="images/kosthanypista.png"
+            alt="Kost Hany Pista Mobile App"
+          />
           <div class="portfolio-content">
             <h3>Kost Hany Pista Mobile App - 2021</h3>
             <p>App to manage tenants & room rentals effectively.</p>
@@ -139,97 +143,85 @@
       </div>
     </section>
 
-    <!-- ...semua isi dari awal sampai sebelum footer tetap sama -->
+    <footer class="footer" id="contact">
+      <div class="footer-container">
+        <div class="footer-info">
+          <p><i class="fab fa-whatsapp"></i> +62 859 5970 5944</p>
+          <p><i class="fas fa-envelope"></i> sekartechdev@gmail.com</p>
+          <p><i class="fab fa-instagram"></i> xyjnee_</p>
+          <p><i class="fab fa-github"></i> strawberriezz</p>
+        </div>
+        <div class="footer-links">
+          <h4>Kebijakan & Informasi</h4>
+          <ul>
+            <li><a href="#">Privasi policy</a></li>
+            <li><a href="#">Term of use</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <form id="contactForm" action="submit_form.php" method="POST">
+            <label for="name">Nama Lengkap:</label>
+            <input type="text" id="name" name="name" maxlength="50" required />
 
-<footer class="footer" id="contact">
-  <div class="footer-container">
-    <div class="footer-info">
-      <p><i class="fab fa-whatsapp"></i> +62 859 5970 5944</p>
-      <p><i class="fas fa-envelope"></i> sekartechdev@gmail.com</p>
-      <p><i class="fab fa-instagram"></i> xyjnee_</p>
-      <p><i class="fab fa-github"></i> strawberriezz</p>
-    </div>
-    <div class="footer-links">
-      <h4>Kebijakan & Informasi</h4>
-      <ul>
-        <li><a href="#">Privasi policy</a></li>
-        <li><a href="#">Term of use</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </div>
-    <div class="footer-contact">
-      <form id="contactForm">
-        <label for="name">Nama Lengkap:</label>
-        <input type="text" id="name" name="name" maxlength="50" required />
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              maxlength="50"
+              required
+            />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" maxlength="50" required />
+            <label for="phone">Nomor Handphone:</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              maxlength="15"
+              required
+            />
 
-        <label for="phone">Nomor Handphone:</label>
-        <input type="text" id="phone" name="phone" maxlength="15" required />
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" maxlength="200"></textarea>
 
-        <label for="message">Pesan:</label>
-        <textarea id="message" name="message" maxlength="200"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
 
-        <button type="submit">Send Message</button>
-      </form>
+          <div
+            id="errorMessages"
+            style="color: #ff6b6b; margin-top: 10px"
+          ></div>
+          <div
+            id="successMessage"
+            style="color: lightgreen; margin-top: 10px"
+          ></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sekar Ayu Fatmasari. All Rights Reserved.</p>
+      </div>
+    </footer>
 
-      <!-- Tempat tampil error -->
-      <div id="errorMessages" style="color: #ff6b6b; margin-top: 10px;"></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Sekar Ayu Fatmasari. All Rights Reserved.</p>
-  </div>
-</footer>
+    <script>
+      function toggleMenu() {
+        const nav = document.getElementById("navLinks");
+        nav.classList.toggle("show");
+      }
+    </script>
 
-<!-- SCRIPT -->
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("show");
-  }
-</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Tambahkan jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-  $('#contactForm').on('submit', function (e) {
-    e.preventDefault();
-
-    let name = $('#name').val().trim();
-    let email = $('#email').val().trim();
-    let phone = $('#phone').val().trim();
-    let message = $('#message').val().trim();
-    let errorMsg = '';
-
-    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-    const phonePattern = /^[0-9]{10,15}$/;
-
-    if (name === '' || email === '' || phone === '') {
-      errorMsg += 'Nama, Email, dan Nomor Handphone wajib diisi.<br>';
-    }
-    if (!emailPattern.test(email)) {
-      errorMsg += 'Format email tidak valid.<br>';
-    }
-    if (!phonePattern.test(phone)) {
-      errorMsg += 'Nomor handphone harus berupa angka 10–15 digit.<br>';
-    }
-    if (name.length > 50) {
-      errorMsg += 'Nama maksimal 50 karakter.<br>';
-    }
-    if (message.length > 200) {
-      errorMsg += 'Pesan maksimal 200 karakter.<br>';
-    }
-
-    if (errorMsg !== '') {
-      $('#errorMessages').html(errorMsg);
-    } else {
-      $('#errorMessages').html('<span style="color: lightgreen;">Pesan berhasil dikirim!</span>');
-      $('#contactForm')[0].reset(); // Kosongkan form
-    }
-  });
-</script>
-</body>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("success") === "1") {
+        document.getElementById("successMessage").innerHTML =
+          "✅ Pesan berhasil dikirim!";
+        document.getElementById("contactForm").reset();
+      } else if (params.get("success") === "0") {
+        document.getElementById("successMessage").innerHTML =
+          "<span style='color:red'>❌ Gagal mengirim pesan.</span>";
+      }
+    </script>
+  </body>
 </html>
